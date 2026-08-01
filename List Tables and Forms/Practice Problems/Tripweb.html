@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookTripToGlb</title>
+    <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#4facfe,#00f2fe);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+form{
+    background:#fff;
+    width:420px;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+h2{
+    text-align:center;
+    color:#333;
+    margin-bottom:25px;
+}
+
+form div{
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-bottom:6px;
+    font-weight:bold;
+    color:#444;
+}
+
+p{
+    margin-bottom:10px;
+    font-weight:bold;
+    color:#444;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+textarea{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:15px;
+    transition:0.3s;
+}
+
+textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+input:focus,
+textarea:focus{
+    outline:none;
+    border-color:#4facfe;
+    box-shadow:0 0 8px rgba(79,172,254,0.4);
+}
+
+/* Radio buttons */
+input[type="radio"]{
+    width:auto;
+    margin-right:5px;
+    margin-left:10px;
+    vertical-align:middle;
+}
+
+input[type="radio"] + label{
+    display:inline;
+    font-weight:normal;
+    margin-right:20px;
+    cursor:pointer;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#4facfe;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#008cff;
+    transform:translateY(-2px);
+}
+
+button:active{
+    transform:translateY(0);
+}
+</style>
+</head>
+<body>
+    <form action="/submit.php" target="_blank">
+
+        <h2>Book Your Trip to GLB</h2>
+
+        <div>
+            <label for="name">Name : </label>
+            <input type="text" name="name" id="name" placeholder="Enter Your Name" required>
+        </div>
+
+        <div>
+            <label for="dob">D.O.B</label>
+            <input type="date" name="dob" id="dob" required>
+        </div>
+
+        <div>
+            <label for="email">Email : </label>
+            <input type="email" name="email" id="email" required>
+        </div>
+
+        <div>
+            <label for="add">Address : </label>
+            <textarea name="add" id="add" placeholder="Enter Your Full Address" required></textarea>
+        </div>
+
+        <div>
+            <p>Select Your Dignity</p>
+            <input type="radio" name="Dignity" id="parent" value="Parent">
+            <label for="parent">Parent</label>
+
+            <input type="radio" name="Dignity" id="student" value="Student">
+            <label for="student">Student</label>
+        </div>
+
+        <div>
+            <p>Select a date to Book Trip</p>
+            <label for="tripdate">Date</label>
+            <input type="date" name="tripdate" id="tripdate">
+        </div>
+
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+
+    </form>
+</body>
+</html>

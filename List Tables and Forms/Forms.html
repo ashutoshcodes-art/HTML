@@ -4,6 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forms in HTML</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+        background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    form{
+        background: #fff;
+        width: 420px;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h2{
+        text-align: center;
+        margin-bottom: 25px;
+        color: #333;
+    }
+
+    form div{
+        margin-bottom: 18px;
+    }
+
+    label{
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+        color: #444;
+    }
+
+    input[type="text"],
+    input[type="name"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="password"],
+    select,
+    textarea{
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 15px;
+        transition: 0.3s;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus{
+        border-color: #007BFF;
+        outline: none;
+        box-shadow: 0 0 6px rgba(0,123,255,0.3);
+    }
+
+    p{
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: #444;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"]{
+        margin-right: 5px;
+        margin-left: 8px;
+    }
+
+    button{
+        width: 100%;
+        padding: 12px;
+        background: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover{
+        background: #0056b3;
+    }
+
+    textarea{
+        resize: vertical;
+    }
+</style>
 </head>
 <body>
     <form action="/submit.php">
@@ -15,7 +111,7 @@
         </div>
 
         <div>
-            <label for="phone">Name : </label>
+            <label for="phone">Phone no : </label>
             <input type="tel" name="tel" id="phone" placeholder="Enter Your Number" required>
         </div>
 
@@ -29,8 +125,38 @@
             <input type="password" name="password" id="pass" placeholder="Enter Your Password" required>
         </div>
 
-        
+        <div>
+            <label for="Gender">Gender</label>
+            <select name="Gender" id="Gender" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
 
+        <div>
+            <p>Select Your Education Board</p>
+            <input type="radio" name="Board" id="cbse" required>
+            <label for="cbse">CBSE</label>
+
+            <input type="radio" name="Board" id="icse">
+            <label for="icse">ICSE</label>
+        </div>
+
+        <div>
+            <input type="checkbox" name="Terms" id="tandc" required>
+            <label for="tandc">I agree to Terms & Conditions</label>
+        </div>
+
+        <div>
+            <label for="feedback">Leave a Comment</label>
+            <textarea name="feedback" id="feedback" rows="4" placeholder="Enter some Improvement Tips"></textarea>
+        </div>
+
+        <div>
+            <button type="submit">Submit</button>
+        </div>
 
     </form>
 </body>
